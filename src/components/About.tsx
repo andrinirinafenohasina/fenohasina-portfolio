@@ -90,10 +90,14 @@ export default function About() {
             <div className="relative p-6 sm:p-8 rounded-2xl glass-card border border-zinc-200/60 dark:border-white/5 bg-white/40 dark:bg-zinc-900/10 shadow-2xl flex flex-col items-center text-center">
               
               {/* Graphic Profile Symbol / Avatar Container */}
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-indigo-400 p-1 mb-6 shadow-xl animate-pulse" style={{ animationDuration: '4s' }}>
-                <div className="w-full h-full rounded-full bg-[#030303] flex items-center justify-center overflow-hidden">
-                  {/* Decorative Abstract geometric layout of Symfony / PHP structure */}
-                  <Terminal className="w-10 h-10 text-indigo-400" />
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-indigo-400 p-1 mb-6 shadow-xl" style={{ animationDuration: '4s' }}>
+                <div className="w-full h-full rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/src/assets/images/profile_photo_1779863617014.png"
+                    alt="Fenohasina Andrinirina"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 {/* Glow ring badge */}
                 <div className="absolute bottom-0 right-0 p-2 rounded-full bg-indigo-600 text-white border-2 border-white dark:border-zinc-950">

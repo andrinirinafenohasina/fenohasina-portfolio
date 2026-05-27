@@ -125,18 +125,18 @@ export default function Hero({ onNavigate }: HeroProps) {
             </motion.div>
           </motion.div>
 
-          {/* Hero Right Visual Column - Premium Code Dashboard Mock */}
+          {/* Hero Right Visual Column - Premium Code + Photo Layered Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, rotateY: 10 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ type: 'spring', stiffness: 50, damping: 15, delay: 0.3 }}
-            className="lg:col-span-5 relative flex items-center justify-center perspective-[1000px] w-full"
+            className="lg:col-span-5 relative flex items-center justify-center perspective-[1000px] w-full min-h-[460px]"
           >
             {/* Absolute Decorative Glow behind the visual dashboard */}
-            <div className="absolute inset-0 bg-indigo-500/10 dark:bg-purple-500/10 rounded-3xl filter blur-[60px] transform scale-90 -z-10" />
+            <div className="absolute inset-0 bg-indigo-500/10 dark:bg-purple-500/10 rounded-3xl filter blur-[60px] transform scale-90 -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
 
-            {/* Microservices & API Visualizer Mock */}
-            <div className="w-full max-w-md glass-card rounded-2xl border border-zinc-200/60 dark:border-white/5 p-5 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+            {/* Microservices & API Visualizer Mock (Shifted back slightly slightly rotated) */}
+            <div className="w-full max-w-[360px] sm:max-w-md glass-card rounded-2xl border border-zinc-200/40 dark:border-white/5 p-4 sm:p-5 shadow-xl relative overflow-hidden backdrop-blur-xl -translate-x-6 -translate-y-4 rotate-[-1deg] transition-all hover:rotate-0 duration-500">
               
               {/* Window Header */}
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-zinc-200/30 dark:border-white/5 font-mono text-[10px]">
@@ -150,72 +150,105 @@ export default function Hero({ onNavigate }: HeroProps) {
               </div>
 
               {/* Code blocks with live glowing parameters */}
-              <ul className="space-y-3.5 font-mono text-xs text-zinc-600 dark:text-zinc-300">
+              <ul className="space-y-3 font-mono text-[11px] text-zinc-650 dark:text-zinc-300">
                 <li className="flex items-start">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">1</span>
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">1</span>
                   <span>
                     <span className="text-indigo-500 font-semibold">App\Entity:</span>
                   </span>
                 </li>
-                <li className="flex items-start pl-4">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">2</span>
+                <li className="flex items-start pl-3.5">
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">2</span>
                   <span>
-                    <span className="text-purple-400">Book:</span> <span className="text-zinc-400"># API Platform Resource</span>
+                    <span className="text-purple-400">Book:</span> <span className="text-zinc-400"># API Resource</span>
                   </span>
                 </li>
-                <li className="flex items-start pl-8 text-zinc-400 dark:text-zinc-400">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">3</span>
+                <li className="flex items-start pl-7 text-zinc-400 dark:text-zinc-400">
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">3</span>
                   <span>
-                    <span className="text-purple-400">attributes:</span> 
-                    <br />
-                    <span className="pl-4">security: </span>
-                    <span className="text-indigo-500 font-medium">"is_granted('ROLE_USER')"</span>
+                    <span className="text-purple-400">security:</span> 
+                    <span className="text-indigo-500 font-medium"> "is_granted('ROLE_USER')"</span>
                   </span>
                 </li>
-                <li className="flex items-start pl-8">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">4</span>
+                <li className="flex items-start pl-7">
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">4</span>
                   <span>
                     <span className="text-purple-400">operations:</span>
                   </span>
                 </li>
-                <li className="flex items-start pl-12 text-zinc-500">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">5</span>
+                <li className="flex items-start pl-10 text-zinc-500 text-[10px]">
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">5</span>
                   <span>
-                    - <span className="text-indigo-400 font-semibold">Get:</span> <span className="text-purple-400">normalization_context</span>: [groups: ['read']]
+                    - <span className="text-indigo-405 font-semibold">Get:</span> normalize: ['read']
                   </span>
                 </li>
-                <li className="flex items-start pl-12 text-zinc-500">
-                  <span className="text-zinc-400 select-none mr-3 w-4 text-right">6</span>
+                <li className="flex items-start pl-10 text-zinc-500 text-[10px]">
+                  <span className="text-zinc-400 select-none mr-2.5 w-3 text-right">6</span>
                   <span>
-                    - <span className="text-indigo-400 font-semibold">Post:</span> <span className="text-amber-500 font-semibold">messenger:</span> true
+                    - <span className="text-indigo-405 font-semibold">Post:</span> <span className="text-amber-500 font-semibold">messenger:</span> true
                   </span>
                 </li>
               </ul>
 
               {/* Floating metrics visual inside the code display */}
-              <div className="mt-5 pt-4 border-t border-zinc-200/30 dark:border-white/5 grid grid-cols-3 gap-3">
-                <div className="bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200/30 dark:border-white/5 rounded-lg p-2.5 text-center">
-                  <Cpu className="w-4 h-4 mx-auto text-indigo-500 mb-1" />
-                  <span className="block text-[10px] text-zinc-400 font-mono">CPU load</span>
-                  <span className="block text-xs font-semibold text-zinc-800 dark:text-white font-mono mt-0.5">2.4%</span>
+              <div className="mt-4 pt-3.5 border-t border-zinc-200/30 dark:border-white/5 grid grid-cols-3 gap-2">
+                <div className="bg-zinc-100/30 dark:bg-zinc-900/40 border border-zinc-200/40 dark:border-white/5 rounded-lg p-2 text-center">
+                  <Cpu className="w-3.5 h-3.5 mx-auto text-indigo-500 mb-0.5" />
+                  <span className="block text-[8px] text-zinc-400 font-mono">CPU load</span>
+                  <span className="block text-[10px] font-semibold text-zinc-850 dark:text-white font-mono mt-0.5">2.4%</span>
                 </div>
-                <div className="bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200/30 dark:border-white/5 rounded-lg p-2.5 text-center">
-                  <Database className="w-4 h-4 mx-auto text-purple-500 mb-1" />
-                  <span className="block text-[10px] text-zinc-400 font-mono">DB query</span>
-                  <span className="block text-xs font-semibold text-zinc-800 dark:text-white font-mono mt-0.5">8ms</span>
+                <div className="bg-zinc-100/30 dark:bg-zinc-900/40 border border-zinc-200/40 dark:border-white/5 rounded-lg p-2 text-center">
+                  <Database className="w-3.5 h-3.5 mx-auto text-purple-500 mb-0.5" />
+                  <span className="block text-[8px] text-zinc-400 font-mono">DB query</span>
+                  <span className="block text-[10px] font-semibold text-zinc-850 dark:text-white font-mono mt-0.5">8ms</span>
                 </div>
-                <div className="bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200/30 dark:border-white/5 rounded-lg p-2.5 text-center">
-                  <Server className="w-4 h-4 mx-auto text-indigo-400 mb-1" />
-                  <span className="block text-[10px] text-zinc-400 font-mono">Cache hit</span>
-                  <span className="block text-xs font-semibold text-zinc-800 dark:text-white font-mono mt-0.5">99.7%</span>
+                <div className="bg-zinc-100/30 dark:bg-zinc-900/40 border border-zinc-200/40 dark:border-white/5 rounded-lg p-2 text-center">
+                  <Server className="w-3.5 h-3.5 mx-auto text-indigo-400 mb-0.5" />
+                  <span className="block text-[8px] text-zinc-400 font-mono">Cache hit</span>
+                  <span className="block text-[10px] font-semibold text-zinc-850 dark:text-white font-mono mt-0.5">99.7%</span>
                 </div>
               </div>
-
-              {/* Glowing Ambient Light Badge overlay */}
-              <span className="absolute bottom-2 right-3 font-mono text-[8px] text-zinc-400 dark:text-zinc-500 tracking-wider">
-                V3.2 STABLE
-              </span>
             </div>
+
+            {/* Overlapping Premium Portrait Photo Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.55, type: 'spring', stiffness: 60, damping: 15 }}
+              className="absolute bottom-1 right-2 sm:right-6 w-[170px] sm:w-[200px] rounded-2xl border border-zinc-200/60 dark:border-white/10 bg-white/90 dark:bg-zinc-950/90 p-2.5 sm:p-3 shadow-2xl z-20 backdrop-blur-md transform hover:translate-y-[-6px] hover:scale-[1.03] transition-all duration-300"
+            >
+              {/* Photo Container Frame with sleek gradient */}
+              <div className="relative aspect-[1/1] w-full rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/40 dark:border-white/5 p-0.5 mb-2.5">
+                <img
+                  src="/src/assets/images/profile_photo_1779863617014.png"
+                  alt="Fenohasina Andrinirina"
+                  className="w-full h-full object-cover rounded-lg"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Engagement status dot */}
+                <span className="absolute bottom-2 left-2 inline-flex items-center space-x-1 px-2 py-1 rounded-full bg-emerald-500/90 text-[8px] text-white font-bold tracking-wide shadow-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                  <span>DISPO</span>
+                </span>
+                
+                {/* Tech micro badge */}
+                <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-indigo-600/95 text-[7px] text-white font-mono font-bold uppercase tracking-wider shadow">
+                  ★ SYMFONY
+                </span>
+              </div>
+
+              {/* Developer Info text */}
+              <div className="text-left">
+                <h4 className="text-xs font-display font-extrabold text-zinc-900 dark:text-white leading-tight">
+                  Fenohasina A.
+                </h4>
+                <p className="text-[10px] font-mono font-medium text-zinc-500 dark:text-indigo-400 mt-0.5">
+                  Architecte & Coder Senior
+                </p>
+              </div>
+            </motion.div>
+
           </motion.div>
 
         </div>
